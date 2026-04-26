@@ -1,0 +1,10 @@
+@model Enrollment
+<h1>Edit Enrollment</h1>
+<input type="hidden" asp-for="Id" />
+<form asp-action="Edit"><div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="mb-3"><label asp-for="StudentId" class="form-label"></label><select asp-for="StudentId" asp-items="ViewBag.StudentId" class="form-select"></select><span asp-validation-for="StudentId" class="text-danger"></span></div>
+<div class="mb-3"><label asp-for="SubjectId" class="form-label"></label><select asp-for="SubjectId" asp-items="ViewBag.SubjectId" class="form-select"></select><span asp-validation-for="SubjectId" class="text-danger"></span></div>
+<div class="mb-3"><label asp-for="EnrollmentDate" class="form-label"></label><input asp-for="EnrollmentDate" class="form-control"/><span asp-validation-for="EnrollmentDate" class="text-danger"></span></div>
+<div class="mb-3"><label asp-for="Grade" class="form-label"></label><input asp-for="Grade" class="form-control"/><span asp-validation-for="Grade" class="text-danger"></span></div>
+<button class="btn btn-primary" type="submit">Save</button> <a asp-action="Index">Back</a></form>
+@section Scripts { @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} }

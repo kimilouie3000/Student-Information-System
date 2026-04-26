@@ -1,0 +1,5 @@
+@model Student
+<h1>Student Details</h1>
+<dl class="row"><dt class="col-sm-2">Name</dt><dd class="col-sm-10">@Model.FullName</dd><dt class="col-sm-2">Email</dt><dd class="col-sm-10">@Model.Email</dd><dt class="col-sm-2">Course</dt><dd class="col-sm-10">@Model.Course?.Name</dd></dl>
+<h5>Enrolled Subjects</h5><ul>@foreach (var e in Model.Enrollments) { <li>@e.Subject?.Name (@e.EnrollmentDate.ToShortDateString())</li> }</ul>
+<a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> | <a asp-action="Index">Back</a>
