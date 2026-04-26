@@ -1,0 +1,9 @@
+@model Student
+<h1>Create Student</h1>
+<form asp-action="Create"><div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="mb-3"><label asp-for="FullName" class="form-label"></label><input asp-for="FullName" class="form-control"/><span asp-validation-for="FullName" class="text-danger"></span></div>
+<div class="mb-3"><label asp-for="Email" class="form-label"></label><input asp-for="Email" class="form-control"/><span asp-validation-for="Email" class="text-danger"></span></div>
+<div class="mb-3"><label asp-for="DateOfBirth" class="form-label"></label><input asp-for="DateOfBirth" class="form-control"/><span asp-validation-for="DateOfBirth" class="text-danger"></span></div>
+<div class="mb-3"><label asp-for="CourseId" class="form-label"></label><select asp-for="CourseId" asp-items="ViewBag.CourseId" class="form-select"></select><span asp-validation-for="CourseId" class="text-danger"></span></div>
+<button class="btn btn-primary" type="submit">Save</button> <a asp-action="Index">Back</a></form>
+@section Scripts { @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} }

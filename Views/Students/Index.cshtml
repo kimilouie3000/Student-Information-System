@@ -1,0 +1,6 @@
+@model IEnumerable<Student>
+<h1>Students</h1><p><a asp-action="Create" class="btn btn-primary">Create New</a></p>
+<table class="table"><thead><tr><th>Name</th><th>Email</th><th>Course</th><th>Subjects</th><th></th></tr></thead><tbody>
+@foreach (var item in Model) {
+<tr><td>@item.FullName</td><td>@item.Email</td><td>@item.Course?.Name</td><td>@string.Join(", ", item.Enrollments.Select(e => e.Subject?.Name))</td><td><a asp-action="Edit" asp-route-id="@item.Id">Edit</a> | <a asp-action="Details" asp-route-id="@item.Id">Details</a> | <a asp-action="Delete" asp-route-id="@item.Id">Delete</a></td></tr>}
+</tbody></table>

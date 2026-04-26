@@ -1,0 +1,9 @@
+@model Course
+@{ ViewData["Title"] = "Create Course"; }
+<h1>Create Course</h1>
+<form asp-action="Create"><div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="mb-3"><label asp-for="Name" class="form-label"></label><input asp-for="Name" class="form-control"/><span asp-validation-for="Name" class="text-danger"></span></div>
+<div class="mb-3"><label asp-for="DurationInMonths" class="form-label"></label><input asp-for="DurationInMonths" class="form-control"/><span asp-validation-for="DurationInMonths" class="text-danger"></span></div>
+<div class="mb-3"><label asp-for="DepartmentId" class="form-label"></label><select asp-for="DepartmentId" asp-items="ViewBag.DepartmentId" class="form-select"></select><span asp-validation-for="DepartmentId" class="text-danger"></span></div>
+<button type="submit" class="btn btn-primary">Save</button> <a asp-action="Index">Back</a></form>
+@section Scripts { @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} }

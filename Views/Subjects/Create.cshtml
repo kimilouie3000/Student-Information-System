@@ -1,0 +1,7 @@
+@model Subject
+<h1>Create Subject</h1>
+<form asp-action="Create"><div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="mb-3"><label asp-for="Name" class="form-label"></label><input asp-for="Name" class="form-control"/><span asp-validation-for="Name" class="text-danger"></span></div>
+<div class="mb-3"><label asp-for="InstructorId" class="form-label"></label><select asp-for="InstructorId" asp-items="ViewBag.InstructorId" class="form-select"></select><span asp-validation-for="InstructorId" class="text-danger"></span></div>
+<button class="btn btn-primary" type="submit">Save</button> <a asp-action="Index">Back</a></form>
+@section Scripts { @{await Html.RenderPartialAsync("_ValidationScriptsPartial");} }
